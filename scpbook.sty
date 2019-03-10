@@ -1,16 +1,106 @@
 %%
-%% define newcommand
+%%  This is file "scpbook.sty"
 %%
-\newcommand{\clearancelevel}[1]{Clearance Level #1}
-\newcommand{\scpname}[1]{Name SCP-#1}
-\newcommand{\objectclass}[1]{Objecct Class #1}
 
-%%
-%% define setup margin
-%%
-\newcommand{\setupmargin}{
-  促setlength{促textheight}{促paperheight}
+%%  Define SCP information
+\def\clearancelevel#1{\gdef\@clearancelevel{#1}}
+\def\@clearancelevel{}
+\def\scpname#1{\gdef\@scpname{#1}}
+\def\@scpname{}
+\def\objectclass#1{\gdef\@objectclass{#1}}
+\def\@objectclass{}
+\def\scpjp#1{\gdef\@scpjp{#1}}
+\def\@scpjp{}
+\def\author#1{\gdef\@author{#1}}
+\def\@author{}
+\def\picpass#1{\gdef\@picpass{#1}}
+\def\@picpass{}
+
+%% Header JP EN
+\newcommand{\header}{
+
+\begin{figure}[ht]
+  \begin{minipage}[c]{0.6\hsize}
+    \begin{minipage}[c]{0.39\hsize}
+      \includegraphics[scale=0.9]{./pic/SCP_Character.png}
+    \end{minipage}
+    \begin{minipage}[c]{0.61\hsize}
+      \includegraphics[scale=0.03]{./pic/SCP_Foundation_emblem.eps}
+    \end{minipage}
+    \fontsize{20pt}{0pt}\selectfont
+    Secure Contain Protect
+  \end{minipage}
+  \begin{minipage}[c]{0.4\hsize}
+    \begin{minipage}[c]{0.6\hsize}
+      \flushleft
+      \fontsize{15pt}{23pt}\selectfont
+      {\bf Clearanve Level}
+
+      {\bf Item \#}
+
+      {\bf Object Class}
+    \end{minipage}
+    \begin{minipage}[c]{0.35\hsize}
+      \flushright
+      \fontsize{15pt}{23pt}\selectfont
+      \@clearancelevel
+
+      SCP-\@scpname\@scpjp 
+
+      \@objectclass
+    \end{minipage}
+  \end{minipage}
+\end{figure}
+
+\hrule
+\quad
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% Footer JP
+\newcommand{\footerJP}{
+\begin{figure}[ht]
+  \begin{minipage}[c]{0.05\hsize}
+    \includegraphics[scale=0.01]{./pic/SCP_Foundation_emblem.eps}
+  \end{minipage}
+  \begin{minipage}[c]{0.95\hsize}
+    \center
+    \fontsize{13pt}{18pt}\selectfont
+    本レポートは''\@author''作「SCP-\@scpname\@scpjp」に基づきます
+
+    \fontsize{10pt}{0pt}\selectfont
+    http://ja.scp-wiki.net/scp-\@scpname\@scpjp
+  \end{minipage}
+\end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Footer EN
+\newcommand{\footerEN}{
+\begin{figure}[ht]
+  \begin{minipage}[c]{0.05\hsize}
+    \includegraphics[scale=0.01]{./pic/SCP_Foundation_emblem.eps}
+  \end{minipage}
+  \begin{minipage}[c]{0.95\hsize}
+    \center
+    \fontsize{13pt}{18pt}\selectfont
+    This report is based on ''SCP-\@scpname\@scpjp'' by ''\@author''
+
+    \fontsize{10pt}{0pt}\selectfont
+    http://ja.scp-wiki.net/scp-\@scpname\@scpjp
+  \end{minipage}
+\end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  SCP Picture
+\newcommand{\scppicture}{
+  \begin{wrapfigure}{r}[10pt]{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{\@picpass}
+  \end{wrapfigure}
+}
 
