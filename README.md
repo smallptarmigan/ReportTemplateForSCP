@@ -20,3 +20,6 @@ makepdf.shを実行するとtexファイルをpdfファイルにコンバート�
 sampleフォルダにはSCP-999のレポートが入っています。
 
 _Jが日本語版、_Eが英語版となります。
+
+<img src="https://github.com/smallptarmigan/ReportTemplateForSCP/blob/master/sample/SCP-999_J.pdf" alt="sample_scp_999_j" title="sample_pdf" width=”50%”>
+
